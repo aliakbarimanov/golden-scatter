@@ -25,18 +25,14 @@ const Home = () => {
 
   useEffect(() => {
     const getProducts = async () => {
-      if (id) {
-        const response = await fetch(
-          `http://64.226.66.94/api/categories/${id}`
-        );
-        const data = await response.json();
+      const response = await fetch(`http://64.226.66.94/api/products/`);
+      const data = await response.json();
 
-        setProducts(data.products);
-      }
+      setProducts(data.products);
     };
 
     getProducts();
-  }, [id]);
+  }, []);
 
   return (
     <section id="shop" className="shop">
