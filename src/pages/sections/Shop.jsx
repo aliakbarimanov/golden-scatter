@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 const Home = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
-  const [id, setId] = useState(0);
 
   useEffect(() => {
     const getCategories = async () => {
@@ -40,7 +39,7 @@ const Home = () => {
         <ul className="categoryList">
           {categories.map((category) => (
             <li className="categoryItem">
-              <button onClick={() => setId(category.id)}>
+              <button>
                 <span>{category.title}</span>
                 <FaAngleRight />
               </button>
