@@ -1,10 +1,13 @@
 // import main files
 @import "./reset";
+@import "./variables";
+@import "./base";
 
 // import components
 @import "./components/header";
-@import "./components/footer";
+@import "./components/productCard";
+@import "./components/cart";
 
 // import pages
-@import "./pages/home";
+@import "./pages/hero";
 @import "./pages/shop";

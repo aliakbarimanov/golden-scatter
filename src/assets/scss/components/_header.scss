@@ -1,0 +1,280 @@
+.header {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid $primary;
+    position: fixed;
+    z-index: 9;
+
+    .container {
+        .mobileMenu {
+            width: 0%;
+            height: 100vh;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            background-color: #ffffff;
+            box-shadow: 1px 0 3px 0 #00000050;
+            transition: all .3s ease;
+
+            &.active {
+                width: 35%;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .closeBtn {
+                width: 100%;
+                height: 30px;
+                outline: none;
+                border: none;
+                border-bottom: 1px solid #00000020;
+                background-color: transparent;
+
+                span {
+                    font-size: $fs-10;
+                    font-weight: 700;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                }
+            }
+
+            .categoryList {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                .category {
+                    padding: 10px 30px;
+
+                    a {
+                        font-size: 17px;
+                        color: $secondary;
+                        transition: all .3s ease;
+
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+
+            .mobileLink {
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+                padding: 10px 30px;
+                align-self: flex-end;
+                font-size: $fs-15;
+                transition: all .3s ease;
+
+                svg {
+                    display: none;
+                }
+
+                a {
+                    color: $secondary;
+
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+
+        .navBar {
+            width: 100%;
+
+            .navList {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .leftSide {
+                    display: flex;
+                    align-items: center;
+                    gap: 30px;
+
+                    .barIcon {
+                        display: none;
+                        padding-top: 10px;
+                        background-color: transparent;
+                        font-size: $fs-30;
+                        border: none;
+                        cursor: pointer;
+                    }
+
+                    .logo {
+                        a {
+                            font-size: $fs-25;
+                            color: $secondary;
+
+                            span {
+                                color: $primary;
+                            }
+                        }
+                    }
+
+                    select {
+                        padding: 8px 10px;
+                        border: 1px solid #00000020;
+                        border-radius: 5px;
+                        cursor: pointer;
+
+                        option {
+                            display: flex;
+                            align-items: center;
+
+                            span {
+                                color: $primary;
+                            }
+
+                            i {
+                                color: $primary;
+                            }
+                        }
+                    }
+                }
+
+                .rightSide {
+                    display: flex;
+                    gap: 20px;
+
+                    a {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 5px;
+                        color: $secondary;
+                        transition: all .3s ease;
+
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+
+                    button {
+                        border: none;
+                        cursor: pointer;
+                        border-radius: 5px;
+                        border: 1px solid $primary;
+                        padding: 8px 10px;
+                        transition: all .3 ease;
+
+                        &.langBtn {
+                            background-color: transparent;
+                            color: $primary;
+
+                            &:hover {
+                                color: #ffffff;
+                                background-color: $primary;
+                            }
+                        }
+
+                        &.joinBtn {
+                            background-color: $primary;
+                            color: #ffffff;
+
+                            &:hover {
+                                color: $primary;
+                                background-color: #ffffff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 990px) {
+    .header {
+        height: 50px;
+
+        .container {
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+
+            .navBar {
+                width: 100%;
+
+                .navList {
+                    width: 100%;
+
+                    .leftSide {
+                        .barIcon {
+                            display: block;
+                        }
+
+                        .logo {
+                            a {
+                                font-size: $fs-25;
+                            }
+                        }
+
+                        select {
+                            display: none;
+                        }
+                    }
+
+                    .rightSide {
+                        gap: 20px;
+
+                        a {
+                            display: none;
+                        }
+
+                        button {
+                            padding: 8px 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .header {
+        .container {
+            padding: 0 10px;
+
+            .mobileMenu {
+                &.active {
+                    width: 100%;
+                }
+            }
+
+            .navBar {
+                .navList {
+                    .leftSide {
+                        gap: 10px;
+
+                        .logo {
+                            a {
+                                font-size: $fs-20;
+                            }
+                        }
+                    }
+
+                    .rightSide {
+                        gap: 10px;
+
+                        button {
+                            padding: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

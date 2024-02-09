@@ -1,0 +1,104 @@
+.cart {
+    opacity: 0;
+    visibility: hidden;
+    width: 0%;
+    height: 100vh;
+    padding: 0 0 0 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    background-color: #ffffff;
+    box-shadow: -5px 0px 15px 0px #00000075;
+    transition: all .3s ease;
+
+    .cartTop {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .cartCounter {
+            color: $primary;
+
+            .cartItem {
+                color: $primary;
+            }
+        }
+
+        .closeBtn {
+            padding: 10px;
+            border: none;
+            background-color: transparent;
+            color: $third;
+            font-size: $fs-25;
+            cursor: pointer;
+        }
+    }
+
+    .cartBody {
+        width: 100%;
+        color: $primary;
+    }
+
+    .cartFooter {
+        width: 25%;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $primary;
+        color: #ffffff;
+        border-radius: 20px;
+
+        .totalAmount {
+            display: inline-block;
+            width: 20%;
+            padding: 10px;
+            border-radius: 15px;
+            background-color: #ffffff;
+            color: $primary;
+        }
+    }
+
+    &.active {
+        width: 30%;
+        right: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.cartStick {
+    width: 100px;
+    height: 100px;
+    padding-left: 10px;
+    background-color: $primary;
+    color: #ffffff;
+    border-radius: 15px 0 0 15px;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+
+    .stickItems{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .stickTotal{
+        padding: 8px 15px;
+        background-color: #ffffff;
+        color: $primary;
+        border-radius: 8px;
+    }
+}

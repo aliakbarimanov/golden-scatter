@@ -1,0 +1,184 @@
+.hero {
+    width: 100%;
+    height: 100vh;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        .container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+
+            .heroTitle {
+                font-size: 50px;
+                font-weight: 700;
+                color: $secondary;
+            }
+
+            .heroDesc {
+                font-size: $fs-20;
+                color: $third;
+            }
+
+            .inputBox {
+                width: 700px;
+                height: 45px;
+                margin-top: 20px;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                box-shadow: 0px 10px 15px #00000020;
+
+                .inputTitle {
+                    width: 10%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    span {
+                        color: $primary;
+                        font-size: $fs-15;
+                        font-weight: 600;
+                        letter-spacing: 0.05px;
+                    }
+                }
+
+                .searchInput {
+                    width: 70%;
+                    height: 100%;
+                    padding: 0 10px;
+                    border: none;
+                    background-color: #00000005;
+                    display: inline-block;
+                    letter-spacing: 1px;
+                }
+
+                .searchBtn {
+                    width: 20%;
+                    height: 100%;
+                    border: none;
+                    border-radius: 0px 5px 5px 0;
+                    background-color: $primary;
+                    color: #ffffff;
+                    font-size: $fs-20;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 990px) {
+    .hero {
+        height: 200px;
+
+        .overlay {
+            .container {
+                .heroTitle {
+                    display: none;
+                }
+
+                .heroDesc {
+                    display: none;
+                }
+
+                .inputBox {
+                    background-color: #ffffff;
+                    width: 90%;
+                    margin: 0 auto;
+                    position: absolute;
+                    top: 100px;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+
+                    .inputTitle {
+                        display: none;
+                    }
+
+                    .searchInput {
+                        width: 80%;
+                    }
+
+                    .searchBtn {
+                        width: 20%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        img {
+            display: none;
+        }
+
+        .overlay {
+            .container {
+                .inputBox {
+                    .searchInput {
+                        width: 75%;
+                    }
+
+                    .searchBtn {
+                        width: 25%;
+                        font-size: $fs-15;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .hero {
+        img {
+            display: none;
+        }
+
+        .overlay {
+            .container {
+                .inputBox {
+                    height: 40px;
+
+                    .searchInput {
+                        width: 65%;
+                        border: 1px solid #00000020;
+                        border-radius: 5px 0 0 5px;
+
+                        &::placeholder{
+                            color: transparent;
+                        }
+                    }
+
+                    .searchBtn {
+                        width: 35%;
+                        gap: 5px;
+                        font-size: $fs-15;
+                    }
+                }
+            }
+        }
+    }
+}
