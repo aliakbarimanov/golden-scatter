@@ -4,6 +4,10 @@
     font-family: 'Lato', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container {
     width: 1440px;
     margin: 0 auto;

@@ -11,6 +11,8 @@ import { useEffect, useState } from "react";
 import { getCategories, getProducts } from "../../api/ApiProvider";
 
 const Home = () => {
+
+  // api calls
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [categoryID, setCategoryID] = useState(0);

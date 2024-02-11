@@ -4,7 +4,6 @@ import Cart from "./Cart";
 // import react icons
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 import { IoIosHelpCircle } from "react-icons/io";
-import { FaCaretDown } from "react-icons/fa6";
 
 // import link
 import { Link } from "react-router-dom";
@@ -40,7 +39,7 @@ const Header = () => {
           <ul className="categoryList">
             {categories.map((category, ind) => (
               <li className="category" key={ind}>
-                <Link to="#">{category.title}</Link>
+                <Link to="/">{category.title}</Link>
               </li>
             ))}
           </ul>
@@ -64,22 +63,10 @@ const Header = () => {
                 <HiMiniBars3CenterLeft />
               </button>
               <h2 className="logo">
-                <Link to="#">
+                <Link to="/">
                   Pick<span>Bazar</span>
                 </Link>
               </h2>
-              <select
-                name="categoryList"
-                id="categoryList"
-                className="categoryList"
-              >
-                {categories.map((category, ind) => (
-                  <option value={category.title} key={ind}>
-                    <span>{category.title}</span>
-                    <FaCaretDown />
-                  </option>
-                ))}
-              </select>
             </div>
             <div className="rightSide">
               <Link to="#">Offer</Link>

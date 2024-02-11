@@ -10,14 +10,18 @@ import Header from "./components/Header";
 // import pages
 import Home from "./pages/Home";
 
+// import redux store
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-    </>
+    </Provider>
   );
 }
 
