@@ -1,44 +1,40 @@
 // import react icons
 import { IoMdBasket } from "react-icons/io";
 
-const Modal = () => {
+const Modal = (data) => {
   return (
     <div className="modal">
       <div className="leftSide">
         <div className="mainImg">
-          <img src="#" alt="Product img" />
+          <img src={data.data.data.main_image} alt={data.data.data.title} />
         </div>
         <ul className="imageList">
           <li className="imageItem">
-            <img src="#" alt="Product img" />
+            <img src={data.data.data.main_image} alt={data.data.data.title} />
           </li>
           <li className="imageItem">
-            <img src="#" alt="Product img" />
+            <img src={data.data.data.main_image} alt={data.data.data.title} />
           </li>
           <li className="imageItem">
-            <img src="#" alt="Product img" />
+            <img src={data.data.data.main_image} alt={data.data.data.title} />
           </li>
           <li className="imageItem">
-            <img src="#" alt="Product img" />
+            <img src={data.data.data.main_image} alt={data.data.data.title} />
           </li>
         </ul>
       </div>
       <div className="rightSide">
-        <h2 className="modalTitle">Brussels Sprout</h2>
-        <p className="modalQuantity">2 lb</p>
-        <p className="modalDesc">
-          The Brussels sprout is a member of the Gemmifera Group of cabbages,
-          grown for its edible buds. The leaf vegetables are typically 1.5–4.0
-          cm in diameter and look like miniature cabbages. The Brussels sprout
-          has long been popular in Brussels, Belgium, and may have gained its
-          name there.
+        <h2 className="modalTitle">{data.data.data.title}</h2>
+        <p className="modalQuantity">
+          {data.data.data.amount_by_unit} {data.data.data.unit}
         </p>
+        <p className="modalDesc">{data.data.data.description}</p>
         <div className="navigations">
           <button>Fruit vegetables</button>
           <button>Vegetables</button>
         </div>
         <div className="modalFooter">
-          <p className="modalPrice">$ 3</p>
+          <p className="modalPrice">$ {data.data.data.price}</p>
           <button>
             <IoMdBasket />
             <span>Cart</span>

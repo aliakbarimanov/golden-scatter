@@ -38,8 +38,8 @@ const Header = () => {
             <span>close</span>
           </button>
           <ul className="categoryList">
-            {categories.map((category) => (
-              <li className="category">
+            {categories.map((category, ind) => (
+              <li className="category" key={ind}>
                 <Link to="#">{category.title}</Link>
               </li>
             ))}
@@ -73,8 +73,8 @@ const Header = () => {
                 id="categoryList"
                 className="categoryList"
               >
-                {categories.map((category) => (
-                  <option value={category.title}>
+                {categories.map((category, ind) => (
+                  <option value={category.title} key={ind}>
                     <span>{category.title}</span>
                     <FaCaretDown />
                   </option>
